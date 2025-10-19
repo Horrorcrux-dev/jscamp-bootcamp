@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>DevJobs - Empleos</title>
         <link rel="icon" type="image/x-icon" href="favico.ico" />
-        <link rel="stylesheet" href="styles.css" />
-        <script type="module" src="./script.js"></script>
+        <link rel="stylesheet" href="./styles.css" />
+        <title>Oferta</title>
     </head>
     <body>
         <header class="nav-bar">
@@ -65,22 +64,11 @@
             </div>
 
             <div class="user-actions">
-                <a class="button secondary">Subir CV</a>
-                <img class="avatar" src="./profile.jpg" alt="Profile picture" />
-            </div>
-        </header>
-        <main>
-            <section class="section-wrapper">
-                <h1>Encuentra tu próximo trabajo</h1>
-                <p>Explora miles de oportunidades en el sector tecnológico.</p>
-                <form
-                    id="empleos-search-form"
-                    role="search"
-                    class="search-form-secondary">
+                <form role="search" class="search-form-secondary">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
+                        width="20"
+                        height="20"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -92,197 +80,217 @@
                         <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
                         <path d="M21 21l-6 -6" />
                     </svg>
-                    <input
-                        id="empleos-search-input"
-                        type="text"
-                        placeholder="Buscar empleos por titulo, habilidad o empresa" />
+                    <input type="text" placeholder="Buscar" />
                 </form>
-                <div class="filters-wrapper">
-                    <select name="Tecnología" id="tecnologia">
-                        <option value="" selected>Tecnología</option>
-                        <option value="javascript">JavaScript</option>
-                        <option value="python">Python</option>
-                        <option value="java">Java</option>
-                        <option value="csharp">C#</option>
-                        <option value="ruby">Ruby</option>
-                        <option value="php">PHP</option>
-                        <option value="go">Go</option>
-                        <option value="typescript">TypeScript</option>
-                        <option value="sql">SQL</option>
-                        <option value="mongodb">MongoDB</option>
-                        <option value="r.">R.</option>
-                        <option value="node.js">Node.js</option>
-                        <option value="react">React</option>
-                        <option value="swift">Swift</option>
-                        <option value="kotlin">Kotlin</option>
-                        <option value="ui/ux">UI/UX</option>
-                        <option value="aws">AWS</option>
-                        <option value="Azure">Azure</option>
-                        <option value="gcp">GPC</option>
-                    </select>
+                <a href="" class="button secondary">Subir CV</a>
+                <img class="avatar" src="./profile.jpg" alt="Profile picture" />
+            </div>
+        </header>
+        <div class="breadCrums">
+            <ul class="breadCrums">
+                <li><a href="">Empleos</a></li>
+                <li><a href="">Ingeniero de Software Senior</a></li>
+            </ul>
+        </div>
 
-                    <select name="Ubicación" id="ubicacion">
-                        <option value="" hidden selected>Ubicación</option>
-                        <option value="remoto">Remoto</option>
-                        <option value="on-site">On-site</option>
-                        <option value="hibrido">Hibrido</option>
-                    </select>
-
-                    <select name="Tipo de contrato" id="contrato">
-                        <option value="" hidden selected>
-                            Tipo de contrato
-                        </option>
-                        <option value="tiempo completo">Tiempo completo</option>
-                        <option value="medio tiempo">Medio tiempo</option>
-                        <option value="freelance">Freelance</option>
-                        <option value="pasantia">Pasantia</option>
-                    </select>
-
-                    <select name="Nivel de experiencia" id="experiencia">
-                        <option value="" hidden selected>
-                            Nivel de experiencia
-                        </option>
-                        <option value="junior">Junior</option>
-                        <option value="mid-level">Mid-level</option>
-                        <option value="senior">Senior</option>
-                        <option value="lead">Lead</option>
-                    </select>
+        <main class="job-info">
+            <section class="job-title-section">
+                <div>
+                    <h1>Ingeniero de Software Senior</h1>
+                    <ul class="search-params">
+                        <li>Tech Solutions Inc.</li>
+                        <li class="tecnologia">JavaScript, React, Node.js</li>
+                        <li class="ubicacion">Remoto</li>
+                        <li class="contrato">Pasantia</li>
+                        <li class="experiencia">Junior</li>
+                    </ul>
                 </div>
+                <a href="./oferta.html" class="button tertiary">
+                    Aplicar ahora
+                </a>
             </section>
-            <section class="jobs-listings">
-                <h3 class="search-result-title">Resultados de búsqueda</h3>
-                <article class="job-card">
-                    <header class="job-header">
-                        <h4>Ingeniero de Software</h4>
-                        <ul class="search-params">
-                            <li>Tech Solutions Inc.</li>
-                            <li class="tecnologia">
-                                JavaScript, React, Node.js
-                            </li>
-                            <li class="ubicacion">Remoto</li>
-                            <li class="contrato">Pasantia</li>
-                            <li class="experiencia">Junior</li>
-                        </ul>
+            <section class="job-info-section">
+                <h2>Descripción del puesto</h2>
+                <p>
+                    Teck Solutions Inc. esta buscando un Ingeniero de Software
+                    Senior altamente motivado y experimentado para unirse a
+                    nuestro equipo remoto. El candidato ideal tendrá una sólida
+                    formación en desarrollo de software, con experiencia en el
+                    diseño, desarrollo e implementacion de soluciones de
+                    software escalables y de alto rendimiento. Como Ingeniero de
+                    Software Senior, usted será responsable de liderar proyectos
+                    de desarrollo, mentorizar a ingenieros junior y colaborar
+                    con equipos multifuncionales para entregar productos de
+                    software de alta calidad.
+                </p>
+            </section>
+            <section class="job-info-section">
+                <h2>Responsabilidades</h2>
+                <p>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="26"
+                        height="26"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke-width="1"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                        <path d="M9 12l2 2l4 -4" />
+                    </svg>
+                    Diseñar, desarrollar y mantener aplicaciones web utilizando
+                    tecnologías modernas.
+                </p>
+                <p>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="26"
+                        height="26"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke-width="1"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                        <path d="M9 12l2 2l4 -4" />
+                    </svg>
+                    Colaborar con equipos de producto y diseño para definir y
+                    entregar nuevas características.
+                </p>
 
-                        <p>
-                            Buscamos un ingeniero de software con experiencia en
-                            desarrollo web y conocimiento en JavaScript, React y
-                            Node.js. El candidato ideal debe ser capaz de
-                            trabajar en equipo y tener buenas habilidades de
-                            comunicación
-                        </p>
-                    </header>
-                    <a href="./oferta.html" class="button tertiary job">
-                        Aplicar
-                    </a>
-                </article>
-                <article class="job-card">
-                    <header class="job-header">
-                        <h4>Analista de Datos</h4>
-                        <ul class="search-params">
-                            <li>Data Driven Co.</li>
-                            <li class="tecnologia">SQL, Python, R.</li>
-                            <li class="ubicacion">
-                                On-site - Ciudad de Mexico
-                            </li>
-                            <li class="contrato">Medio Tiempo</li>
-                            <li class="experiencia">Mid-level</li>
-                        </ul>
-                        <p>
-                            Estamos buscando un analista de datos con
-                            experiencia en el manejo de grandes conjuntos de
-                            datos y herramientas de visualización. Se requiere
-                            conocimiento en SQL, Python y R.
-                        </p>
-                    </header>
-                    <a href="./oferta.html" class="button tertiary job">
-                        Aplicar
-                    </a>
-                </article>
-                <article class="job-card">
-                    <header class="job-header">
-                        <h4>Desarrollador de Aplicaciones Móviles</h4>
-                        <small>Mobile Apps Ltd. | Guadalajara</small>
-                        <ul class="search-params">
-                            <li>Mobile Apps Ltd.</li>
-                            <li class="tecnologia">Swift, Kotlin, UI/UX</li>
-                            <li class="ubicacion">On-site - Guadalajara</li>
-                            <li class="contrato">Tiempo completo</li>
-                            <li class="experiencia">Senior</li>
-                        </ul>
-                        <p>
-                            Buscamos un desarrollador de aplicaciones móviles
-                            con experiencia en iOS y/o Android. El candidato
-                            ideal debe tener conocimientos en Swift, Kotlin y el
-                            desarrollo de interfaces de usuario.
-                        </p>
-                    </header>
-                    <a href="./oferta.html" class="button tertiary job">
-                        Aplicar
-                    </a>
-                </article>
-                <article class="job-card">
-                    <header class="job-header">
-                        <h4>Ingeniero de DevOps</h4>
-                        <ul class="search-params">
-                            <li>Cloud Services SA</li>
-                            <li class="tecnologia">AWS, Azure, GCP</li>
-                            <li class="ubicacion">Remoto</li>
-                            <li class="contrato">Freelance</li>
-                            <li class="experiencia">Lead</li>
-                        </ul>
-                        <p>
-                            Estamos buscando un ingeniero de DevOps con
-                            experiencia en la gestión de infraestructuras en la
-                            nube, automatización de procesos y herramientas de
-                            integración continua. Se requiere conocimiento en
-                            AWS, Azure o GCP.
-                        </p>
-                    </header>
-                    <a href="./oferta.html" class="button tertiary job">
-                        Aplicar
-                    </a>
-                </article>
+                <p>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="26"
+                        height="26"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke-width="1"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                        <path d="M9 12l2 2l4 -4" />
+                    </svg>
+                    Escribir código limpio, eficiente y bien documentado.
+                </p>
+                <p>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="26"
+                        height="26"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke-width="1"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                        <path d="M9 12l2 2l4 -4" />
+                    </svg>
+                    Realizar revisiones de código y proporcionar
+                    retroalimentación constructiva a los miembros del equipo.
+                </p>
             </section>
-            <nav class="pagination-wrapper">
-                <a href="" class="prev">
+            <section class="job-info-section">
+                <h2>Requisitos</h2>
+                <p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
+                        width="26"
+                        height="26"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="#ffffff"
                         stroke-width="1"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left">
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M15 6l-6 6l6 6" />
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                        <path d="M9 12l2 2l4 -4" />
                     </svg>
-                </a>
-                <a href="" class="is-active">1</a>
-                <a href="" class="">2</a>
-                <a href="" class="">3</a>
-                <a href="" class="">4</a>
-                <a href="" class="">5</a>
-                <a href="" class="prev">
+                    Licenciatura en informática o campo relacionado.
+                </p>
+                <p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
+                        width="26"
+                        height="26"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="#ffffff"
                         stroke-width="1"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right">
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M9 6l6 6l-6 6" />
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                        <path d="M9 12l2 2l4 -4" />
                     </svg>
+                    Mínimo de 5 años de experiencia en desarrollo de software
+                </p>
+
+                <p>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="26"
+                        height="26"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke-width="1"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                        <path d="M9 12l2 2l4 -4" />
+                    </svg>
+                    Experiencia con frameworks de JavaScript (por ejemplo,
+                    React, Angular, Vue.js).
+                </p>
+                <p>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="26"
+                        height="26"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke-width="1"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                        <path d="M9 12l2 2l4 -4" />
+                    </svg>
+                    Familiaridad con metodologías ágiles y herramientas de
+                    control de versiones (por ejemplo, Git).
+                </p>
+            </section>
+            <section class="job-info-section">
+                <h2>Acerca de la empresa</h2>
+                <p>
+                    Tech Solutions Inc. es una empresa de tecnología innovadora
+                    que se centra en la creación de soluciones de software de
+                    vanguardia para diversas industrias. Estamos comprometidos
+                    con el fomento de un entorno de trabajo colaborativo e
+                    inclusivo donde cada empleado pueda prosperar y crecer
+                    profesionalmente. Ofrecemos salarios competitivos,
+                    beneficios integrales y oportunidades de desarrollo
+                    profesional continuo.
+                </p>
+            </section>
+            <section class="apply-section">
+                <a href="./oferta.html" class="button tertiary">
+                    Aplicar ahora
                 </a>
-            </nav>
+            </section>
         </main>
         <footer>
             <small>&copy; 2024 DevJobs. Todos los derechos reservados.</small>

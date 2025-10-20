@@ -1,4 +1,5 @@
-import "./fetch-data.js";
-import "./filters.js";
-import "./apply-button.js";
-import "./search-input.js";
+import "./components/fetch-data.js";
+import "./utils/filters.js";
+import "./utils/apply-button.js";
+import "./utils/search-input.js";
+import "./components/pagination.js";

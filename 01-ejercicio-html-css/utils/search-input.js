@@ -1,8 +1,18 @@
 //Busqueda por palabra clave
 const searchInput = document.querySelector("#empleos-search-input");
 
+function filterJobsByKeyword(keyword) {
+    const jobs = document.querySelectorAll(".job-card");
+    jobs.forEach((job) => {
+        const title = job.querySelector("#job-title").textContent.toLowerCase();
+        const isVisible = title.includes(keyword.toLowerCase());
+        job.classList.toggle("hidden", !isVisible);
+    });
+}
+
 searchInput.addEventListener("input", () => {
-    console.log(searchInput.value);
+    const keyword = searchInput.value;
+    filterJobsByKeyword(keyword);
 });
 
 searchInput.addEventListener("blur", () => {

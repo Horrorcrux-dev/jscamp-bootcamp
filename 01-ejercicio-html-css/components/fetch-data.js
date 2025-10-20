@@ -1,7 +1,7 @@
 //Fetch de datos.json para pagina Empleos
 
 const container = document.querySelector(".jobs-listings");
-fetch("./data.json") //fetch es asincrono
+fetch("../lib/data.json") //fetch es asincrono
     .then((response) => {
         return response.json();
     })
@@ -12,9 +12,10 @@ fetch("./data.json") //fetch es asincrono
             article.dataset.technology = job.data.technology;
             article.dataset.modalidad = job.data.modalidad;
             article.dataset.nivel = job.data.nivel;
+            article.dataset.id = job.id;
 
             article.innerHTML = `<header class="job-header">
-                        <h4>${job.titulo}</h4>
+                        <h4 id="job-title">${job.titulo}</h4>
                         <ul class="search-params">
                             <li>${job.empresa}</li>
                             <li>${job.ubicacion}</li>

@@ -1,3 +1,9 @@
+import {
+    setTecFilter,
+    setLevFilter,
+    setLocFilter,
+    getFilterState,
+} from "./state.js";
 //Filtro de modalidad
 
 const filterLocation = document.querySelector("#filter-location");
@@ -9,20 +15,14 @@ const mensaje = document.querySelector("#filter-selected-value");
 function applyAllFilters() {
     const jobs = document.querySelectorAll(".job-card");
 
-    const selectedLocation = filterLocation.value;
-    const selectedTechnology = filterTechnology.value;
-    const selectedLevel = filterLevel.value;
+    setLocFilter(filterLocation.value);
+    setTecFilter(filterTechnology.value);
+    setLevFilter(filterLevel.value);
 
-    const activeFilters = [];
-    if (selectedLocation) activeFilters.push(`Ubicación: ${selectedLocation}`);
-    if (selectedTechnology)
-        activeFilters.push(`Tecnología: ${selectedTechnology}`);
-    if (selectedLevel) activeFilters.push(`Nivel: ${selectedLevel}`);
+    const selectedFilters = getFilterState();
 
-    mensaje.textContent =
-        activeFilters.length > 0
-            ? `Filtros activos - ${activeFilters.join(", ")}`
-            : "";
+    mensaje.textContent = `Filtros - Tec:${selectedFilters.tec} - Loc:${selectedFilters.loc} - Lev: ${selectedFilters.lev}
+    `;
 
     jobs.forEach((job) => {
         const modalidad = job.getAttribute("data-modalidad");
@@ -30,10 +30,11 @@ function applyAllFilters() {
         const nivel = job.getAttribute("data-nivel");
 
         const locationMatch =
-            selectedLocation === "" || selectedLocation === modalidad;
+            selectedFilters.loc === "" || selectedFilters.loc === modalidad;
         const technologyMatch =
-            selectedTechnology === "" || selectedTechnology === tecnologia;
-        const levelMatch = selectedLevel === "" || selectedLevel === nivel;
+            selectedFilters.tec === "" || selectedFilters.tec === tecnologia;
+        const levelMatch =
+            selectedFilters.lev === "" || selectedFilters.lev === nivel;
         const isShown = locationMatch && technologyMatch && levelMatch;
         job.classList.toggle("hidden", !isShown);
         job.classList.toggle("visible", isShown);

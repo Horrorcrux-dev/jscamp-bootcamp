@@ -1,3 +1,5 @@
+import { setJobs } from "../utils/state.js";
+import { viewCurrentPageJobs } from "./pagination.js";
 //Fetch de datos.json para pagina Empleos
 
 const container = document.querySelector(".jobs-listings");
@@ -6,13 +8,14 @@ fetch("../lib/data.json") //fetch es asincrono
         return response.json();
     })
     .then((jobs) => {
+        setJobs(jobs);
         jobs.forEach((job) => {
             const article = document.createElement("article");
             article.className = "job-card";
+            article.id = job.id;
             article.dataset.technology = job.data.technology;
             article.dataset.modalidad = job.data.modalidad;
             article.dataset.nivel = job.data.nivel;
-            article.dataset.id = job.id;
 
             article.innerHTML = `<header class="job-header">
                         <h4 id="job-title">${job.titulo}</h4>
@@ -30,5 +33,6 @@ fetch("../lib/data.json") //fetch es asincrono
                         Aplicar
                     </a>`;
             container.appendChild(article);
+            viewCurrentPageJobs();
         });
     });

@@ -7,6 +7,7 @@
         <link rel="icon" type="image/x-icon" href="../images/favico.ico" />
         <link rel="stylesheet" href="../styles.css" />
         <script type="module" src="../script.js"></script>
+        <script type="module" src="../components/pagination.js"></script>
     </head>
     <body>
         <header class="nav-bar">
@@ -142,12 +143,26 @@
                         <option value="lead">Lead</option>
                     </select>
                 </div>
-                <a id="filter-selected-value" href=""></a>
+                <a
+                    id="filter-selected-value"
+                    class="filterSelected"
+                    href=""></a>
             </section>
-            <section class="jobs-listings">
-                <h3 class="search-result-title">Resultados de búsqueda</h3>
+            <section class="jobs-listings"></section>
+            <section class="pagination-section">
+                <div class="filters-wrapper pages">
+                    <select
+                        name="jobsPerPage"
+                        id="jobs-per-page"
+                        class="jobsPerPageSelector">
+                        <option value="3" selected>3</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+                <nav class="pagination-wrapper"></nav>
             </section>
-            <nav class="pagination-wrapper"></nav>
         </main>
         <footer>
             <small>&copy; 2024 DevJobs. Todos los derechos reservados.</small>

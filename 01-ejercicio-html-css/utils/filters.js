@@ -21,8 +21,11 @@ function applyAllFilters() {
 
     const selectedFilters = getFilterState();
 
-    mensaje.textContent = `Filtros - Tec:${selectedFilters.tec} - Loc:${selectedFilters.loc} - Lev: ${selectedFilters.lev}
-    `;
+    mensaje.textContent = `Filtros - Tecnología: ${
+        selectedFilters.tec || "none"
+    } - Ubicación: ${selectedFilters.loc || "none"} - Experiencia: ${
+        selectedFilters.lev || "none"
+    }`;
 
     jobs.forEach((job) => {
         const modalidad = job.getAttribute("data-modalidad");

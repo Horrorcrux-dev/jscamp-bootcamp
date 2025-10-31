@@ -414,7 +414,7 @@ form {
 
 .filters-wrapper {
     max-width: 65rem;
-    width: 100%;
+    width: auto;
     display: flex;
     justify-content: left;
     gap: 1rem;
@@ -545,6 +545,12 @@ main > section:nth-child(2) footer {
     }
 }
 
+.logo-nav svg {
+    color: var(--primary-light);
+    height: 2rem;
+    width: 2rem;
+}
+
 .job-card {
     display: flex;
     flex-direction: row;
@@ -617,8 +623,10 @@ footer {
     justify-content: space-around;
     margin: 0 auto;
     max-width: 65rem;
+    flex-wrap: wrap;
+    padding-inline: 1rem;
     width: 100%;
-    gap: 2rem;
+    gap: .5rem;
 
     .filters-wrapper.pages {
         margin-top: 0;

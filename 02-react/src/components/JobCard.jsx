@@ -1,21 +1,36 @@
+import { useState } from "react";
+import Modal from "./modal";
+
 const JobCard = ({ job }) => {
-    return (
-        <article className="job-card" id={job.id}>
-            <header className="job-header">
-                <h4 id="job-title">{job.titulo}</h4>
-                <ul className="search-params">
-                    <li>{job.empresa}</li>
-                    <li>{job.ubicacion}</li>
-                    <li>{job.data.technology}</li>
-                    <li>{job.data.nivel}</li>
-                </ul>
-                <p>{job.descripcion}</p>
-            </header>
-            <a href="./oferta.html" className="button tertiary job">
-                Aplicar
-            </a>
-        </article>
-    );
+  const [isApplied, setIsApplied] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleApplyClick = () => {
+    event.preventDefault();
+    setIsApplied(true);
+  };
+
+  const buttonClasses = isApplied ? "button tertiary job is-applied" : "button tertiary job";
+  const buttonText = isApplied ? "Aplicado" : "Aplicar";
+
+  return (
+    <article
+      className="job-card"
+      id={job.id}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}>
+      <header className="job-header">
+        <h4 id="job-title">{job.titulo}</h4>
+
+        {isHovered && <Modal job={job} />}
+
+        <p>{job.descripcion}</p>
+      </header>
+      <a href="#" className={buttonClasses} onClick={handleApplyClick}>
+        {buttonText}
+      </a>
+    </article>
+  );
 };
 
 export default JobCard;

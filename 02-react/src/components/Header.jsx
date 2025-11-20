@@ -1,3 +1,5 @@
+import Link from "./Link";
+
 const Header = () => {
     return (
         <header className="nav-bar">
@@ -19,15 +21,15 @@ const Header = () => {
                     DevJobs
                 </h2>
                 <nav>
-                    <a href="../index.html">Inicio</a>
-                    <a href="empleos.html">Empleos</a>
-                    <a href="oferta.html">Empresas</a>
-                    <a href="">Salarios</a>
+                    <Link href="/">Inicio</Link>
+                    <Link href="/search">Empleos</Link>
+                    <Link href="/oferta">Empresas</Link>
+                    <Link href="">Salarios</Link>
                 </nav>
             </div>
 
             <div className="user-actions">
-                <a className="button secondary">Subir CV</a>
+                <Link className="button secondary">Subir CV</Link>
                 <img
                     className="avatar"
                     src="./profile.jpg"

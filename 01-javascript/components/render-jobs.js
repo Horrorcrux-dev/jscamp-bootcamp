@@ -1,5 +1,5 @@
 import { getFilteredJobs, setNumberOfPages } from "../utils/state.js";
-import { viewCurrentPageJobs, renderPaginationButtons } from "./pagination.js";
+import { renderPaginationButtons, viewCurrentPageJobs } from "./pagination.js";
 
 export default function renderJobs() {
     const jobs = getFilteredJobs();
@@ -8,6 +8,16 @@ export default function renderJobs() {
     const h3 = document.createElement("h3");
     h3.className = "search-result-title";
     h3.innerText = "Resultados de búsqueda";
+
+    /* 
+        Creamos un DocumentFragment para mejorar el rendimiento.
+        En lugar de agregar cada trabajo directamente al DOM (lo que haría que el navegador redibuje la página múltiples veces), guardamos todos los elementos en memoria primero. Al final, agregamos todo de una sola vez.
+        
+        Es como preparar todos los platos en la cocina antes de llevarlos a la mesa, en vez de hacer un viaje por cada plato, llevamos todos juntos, y es mejor :)
+
+        Esto viene muy bien cuando tenemos muchos elementos que agregar al DOM.
+    */
+    const fragment = document.createDocumentFragment();
 
     jobs.forEach((job) => {
         const article = document.createElement("article");
@@ -32,9 +42,10 @@ export default function renderJobs() {
                     <a href="./oferta.html" class="button tertiary job">
                         Aplicar
                     </a>`;
-        container.appendChild(article);
+        fragment.appendChild(article);
     });
 
+    container.appendChild(fragment);
     setNumberOfPages();
     viewCurrentPageJobs();
     renderPaginationButtons();
